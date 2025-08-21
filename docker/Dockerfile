@@ -1,0 +1,6 @@
+
+FROM python:3.10-slim
+WORKDIR /app/server
+COPY ../server /app/server
+EXPOSE 8011
+CMD ["python","run_demo.py"]

@@ -1,0 +1,45 @@
+
+<!doctype html><html><head><meta charset="utf-8"><title>Oracle Designer UI</title>
+<style>
+body{font-family:system-ui,Segoe UI,Arial;margin:20px}
+.card{border:1px solid #ddd;border-radius:12px;padding:12px;margin:8px 0}
+pre{white-space:pre-wrap}
+</style>
+<script>
+let BASE="http://127.0.0.1:8011";
+async function api(path, init){ const r=await fetch(BASE+path,{headers:{'Content-Type':'application/json'},...init}); if(!r.ok){throw new Error(r.status);} const ct=r.headers.get('content-type')||''; return ct.includes('application/json')?r.json():r.text(); }
+async function refresh(){
+  try{
+    const snap = await api('/show/snapshot');
+    document.getElementById('areas').innerHTML = Object.entries(snap.areas||{}).map(([n,st])=>`<div class="card"><b>${n}</b><div>${Object.entries(st).map(([k,v])=>`${k}: ${(+v).toFixed(1)}`).join(' · ')}</div></div>`).join('');
+  }catch(e){ console.error(e); }
+}
+async function bump(){ const area=v('area'), dim=v('dim'), delta=parseFloat(v('delta')); await api('/area_bump',{method:'POST',body:JSON.stringify({name:area,dim,delta})}); refresh(); }
+async function rumor(){ await api('/rumor',{method:'POST',body:JSON.stringify({hypothesis:v('hyp'),source:v('src'),polarity:parseInt(v('pol')),reliability:parseFloat(v('rel'))})}); }
+async function dsl_load(){ await api('/dsl_load',{method:'POST',body:JSON.stringify({rule:v('dsl')})}); }
+async function dsl_exec(){ await api('/dsl_exec',{method:'POST',body:JSON.stringify({area:v('area'),outcome:v('outcome')})}); refresh(); }
+function v(id){ return document.getElementById(id).value; }
+window.onload=()=>{ document.getElementById('base').addEventListener('input',e=>BASE=e.target.value); refresh(); setInterval(refresh,1500); };
+</script></head><body>
+<h1>Oracle Designer UI</h1>
+<div class="card">Base URL: <input id="base" value="http://127.0.0.1:8011" style="width:260px"> <button onclick="refresh()">Refresh</button></div>
+<div class="card">
+  <h3>Controls</h3>
+  <div>Area: <input id="area" value="Market"> Dim: <input id="dim" value="security"> Δ: <input id="delta" value="-3"></div>
+  <button onclick="bump()">Area bump</button><hr>
+  <div>Hyp: <input id="hyp" value="player=arsonist"> Source: <input id="src" value="tavern"> Pol: <input id="pol" value="1"> Rel: <input id="rel" value="0.9"></div>
+  <button onclick="rumor()">Inject rumor</button><hr>
+  <div>Outcome: <input id="outcome" value="calm"></div>
+  <textarea id="dsl" rows="6" style="width:100%">WHEN area.security < 45
+NPCS any
+KIND mob
+STAKES "Demo"
+OUTCOMES:
+  calm:
+    area.security += 4
+  riot:
+    area.security -= 6</textarea>
+  <div><button onclick="dsl_load()">Load DSL</button> <button onclick="dsl_exec()">Exec DSL on area</button></div>
+</div>
+<div class="card"><h3>Areas</h3><div id="areas"></div></div>
+</body></html>

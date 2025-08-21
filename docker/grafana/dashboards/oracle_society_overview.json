@@ -1,0 +1,25 @@
+{
+  "dashboard": {
+    "title": "Oracle Society Overview",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "HTTP Requests",
+        "targets": [
+          {
+            "expr": "http_requests_total"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Rate Limited",
+        "targets": [
+          {
+            "expr": "rate_limited_total"
+          }
+        ]
+      }
+    ]
+  }
+}
