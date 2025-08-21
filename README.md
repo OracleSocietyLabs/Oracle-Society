@@ -3,7 +3,7 @@
 
 [![CI - Python](https://github.com/SpirosTs/oracle-society/actions/workflows/ci-python.yml/badge.svg)](https://github.com/SpirosTs/oracle-society/actions/workflows/ci-python.yml) [![CI - Docker](https://github.com/SpirosTs/oracle-society/actions/workflows/ci-docker.yml/badge.svg)](https://github.com/SpirosTs/oracle-society/actions/workflows/ci-docker.yml) [![Release](https://github.com/SpirosTs/oracle-society/actions/workflows/release.yml/badge.svg)](https://github.com/SpirosTs/oracle-society/actions/workflows/release.yml)
 
-A complete, production-ready toolkit for building Nemesis-like emergent gameplay across **RPG**, **Strategy**, and **MMO**.
+A complete, production-ready toolkit for building a emergent gameplay across **RPG**, **Strategy**, and **MMO**.
 
 - ✅ Unity & Unreal **in-process adapters** (no server required)
 - ✅ Optional Python relay: REST/SSE + snapshots/WAL + rate-limits + metrics
