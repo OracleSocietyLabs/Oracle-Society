@@ -58,19 +58,3 @@ MIT — see `LICENSE`.
 - CI uploads coverage to Codecov (from Python 3.11 job)
 
 
-## Branch protection (recommended)
-Εκτέλεσε ένα από τα παρακάτω:
-
-### Με GitHub CLI
-```bash
-gh auth login  # αν δεν έχεις κάνει
-./scripts/apply_branch_protection_gh.sh <owner> <repo> main
-```
-
-### Με REST (curl)
-```bash
-export GITHUB_TOKEN=<token με repo:admin>
-./scripts/apply_branch_protection_curl.sh <owner> <repo> main
-```
-
-Αυτό απαιτεί επιτυχία των checks: **CI - Python**, **CI - Docker**, **CodeQL** πριν από merge στο `main`.
