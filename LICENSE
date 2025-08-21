@@ -1,22 +1,26 @@
+Oracle Society License 1.0 (Community Edition)
 
-MIT License
+Copyright (c) 2025 Oracle Society Labs
 
-Copyright (c) 2025 Oracle Society
+This software is licensed under the terms of the GNU Affero General Public License v3.0 (AGPL-3.0).
+You may use, modify, and redistribute this software under the conditions of AGPL-3.0.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Commercial Usage:
+If you wish to use this software, or any derivative works, in a closed-source or commercial product,
+you must obtain a separate commercial license from Oracle Society Labs.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+Contact: [your email or website here]
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+---
+
+Summary of rights under AGPL-3.0:
+- ✅ You can use, study, modify, and share this software freely.
+- ✅ If you distribute or deploy it (even over a network), you must also provide source code and modifications under the same license.
+- ❌ You cannot use this software in a proprietary or commercial product without a separate commercial agreement.
+
+DISCLAIMER:
+This software is provided "AS IS", without warranty of any kind, express or implied,
+including but not limited to the warranties of merchantability, fitness for a particular purpose
+and noninfringement. In no event shall the authors or copyright holders be liable
+for any claim, damages or other liability, whether in an action of contract, tort or otherwise,
+arising from, out of or in connection with the software or the use or other dealings in the software.
